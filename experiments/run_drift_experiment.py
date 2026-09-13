@@ -298,10 +298,6 @@ def run_drift_experiment(center=False, fractions=None, skip_slow=False):
                 if frac == fractions[0]:  # Run only on the first iteration
                     from scipy.stats import spearmanr
                     D_new = D.copy()
-                    detector.lpgw.cost_scale = 0.03284385958583712
-                    D_old = detector.compute_distance_matrix(q_segs, r_segs)
-                    print(f"\n[CACHE CHECK] identical: {np.allclose(D_new, D_old)}")
-                    print(f"[CACHE CHECK] spearman : {spearmanr(D_new.ravel(), D_old.ravel()).correlation:.4f}\n")
             else:
                 D = fn(q_segs, r_segs)
             elapsed = time.perf_counter() - t0

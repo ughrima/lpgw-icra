@@ -68,9 +68,9 @@ GT_SEGMENT_CENTER_THRESHOLD = 0.5   # secondary GT for the tolerance ablation
 # ----------------- LPGW -----------------
 
 # config.py settings for LPGW
-LPGW_LAMBDA = 2.0  #uzhfpv
+LPGW_LAMBDA = 1.0  #uzhfpv
 # LPGW_LAMBDA = 1.0          # kitti
-LPGW_DISTANCE_LAMBDA = 0.5 #uzhfpv
+LPGW_DISTANCE_LAMBDA = 0.2 #uzhfpv
 # LPGW_DISTANCE_LAMBDA = 0.2   # kitti
 LPGW_SEGMENT_POINTS = 100    # Upgraded from 50 to prevent heavy smoothing on aggressive flight
 
