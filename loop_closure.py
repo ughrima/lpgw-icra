@@ -216,35 +216,30 @@ class LoopClosureDetector:
     # ------------------------------------------------------------------
     # Distance matrix
     # ------------------------------------------------------------------
-    def compute_distance_matrix(self, segments1, segments2):
-        """
-        Compute distance matrix between query segments (segments1) 
-        and reference/database segments (segments2).
-        """
-        # 1. Downsample both sets symmetrically first
+    def compute_distance_matrix(self, segments1, segments2, verbose=True):
         proc_q = [self.downsample_segment(s, self.downsample_points) for s in segments1]
         proc_ref = [self.downsample_segment(s, self.downsample_points) for s in segments2]
 
-        # 2. Select reference from the cleanly downsampled pool
-        self.reference_segment, self.reference_index = self.select_reference(
-            proc_ref, self.reference_strategy
-        )
-        print(f"Reference segment: index={self.reference_index}, points={len(self.reference_segment)}")
+        # Use a pinned reference if one was set; only fall back to the strategy.
+        if self.reference_index is not None:
+            self.reference_segment = proc_ref[self.reference_index]
+        else:
+            self.reference_segment, self.reference_index = self.select_reference(
+                proc_ref, self.reference_strategy
+            )
 
-        # 3. Calibrate cost scale if needed
-        if self.cost_scale is None:
-            lpgw_probe = LPGW(lambdaa=self.lambdaa, cost_mode=self.cost_mode)
-            self.cost_scale = lpgw_probe.calibrate(proc_ref + proc_q)
-            self.lpgw.cost_scale = self.cost_scale
+        # Use a pinned cost scale if one was set; only calibrate if missing.
+        if self.lpgw.cost_scale is None:
+            probe = LPGW(cost_mode=self.cost_mode,
+                        huber_delta_frac=self.huber_delta_frac)
+            self.lpgw.cost_scale = probe.calibrate(proc_ref + proc_q)
+        self.cost_scale = self.lpgw.cost_scale
 
-        # 4. Compute embeddings using the downsampled sequences
-        print("Computing LPGW embeddings for query segments...")
+        print(f"Reference index: {self.reference_index}   "
+            f"cost_scale: {self.cost_scale:.4f}")
+
         embeddings_q = [self.lpgw.embed(self.reference_segment, s) for s in proc_q]
-        
-        print("Computing LPGW embeddings for database segments...")
         embeddings_r = [self.lpgw.embed(self.reference_segment, s) for s in proc_ref]
-
-        print("Computing LPGW discrepancy matrix...")
         D = self.lpgw.distance_matrix(embeddings_q, embeddings_r)
         return D
 

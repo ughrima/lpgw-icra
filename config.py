@@ -50,8 +50,8 @@ STRIDE = 0.5               # seconds  -> 50-point windows, 80% overlap
 # SECONDARY. Primary reporting is threshold-free (max F1, AP, Recall@1).
 PERCENTILE = _d["percentile"]
 
-SPATIAL_TOLERANCE = 1.0 #uzhfpv
-# SPATIAL_TOLERANCE = 5.0 #kitti
+# SPATIAL_TOLERANCE = 1.0 #uzhfpv
+SPATIAL_TOLERANCE = 5.0 #kitti
 TOLERANCE_SWEEP = [0.5, 1.0, 1.5, 2.0]
 PERCENTILE_SWEEP = [1, 5, 10, 20, 50]
 
@@ -68,10 +68,10 @@ GT_SEGMENT_CENTER_THRESHOLD = 0.5   # secondary GT for the tolerance ablation
 # ----------------- LPGW -----------------
 
 # config.py settings for LPGW
-LPGW_LAMBDA = 2.0  #uzhfpv
-# LPGW_LAMBDA = 1.0          # kitti
-LPGW_DISTANCE_LAMBDA = 0.5 #uzhfpv
-# LPGW_DISTANCE_LAMBDA = 0.2   # kitti
+# LPGW_LAMBDA = 2.0  #uzhfpv
+LPGW_LAMBDA = 1.0          # kitti
+# LPGW_DISTANCE_LAMBDA = 0.5 #uzhfpv
+LPGW_DISTANCE_LAMBDA = 0.2   # kitti
 LPGW_SEGMENT_POINTS = 100    # Upgraded from 50 to prevent heavy smoothing on aggressive flight
 
 
@@ -84,8 +84,8 @@ LPGW_HUBER_DELTA_FRAC = 0.1
 # Filled by lpgw.calibrate() at runtime. Pin it here once measured so that
 # drift / overlap / ablation runs share one normalisation and therefore
 # measure the perturbation rather than a shifting baseline.
-LPGW_COST_SCALE = 56.53432887902825 #uzhfpv
-# LPGW_COST_SCALE = 97.9785 #kitti
+# LPGW_COST_SCALE = 56.53432887902825 #uzhfpv
+LPGW_COST_SCALE = 97.9785 #kitti
 
 LPGW_REFERENCE_STRATEGY = "median_diameter"   # median_diameter|first|middle|last
 
