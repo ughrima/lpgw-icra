@@ -1,0 +1,30 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS System Files
+.DS_Store
+.Trashes
+
+# External Submodule / Dependencies folder
+Linearized_Partial_Gromov_Wasserstein/
+
+# Project Data & Outputs (Datasets, Results, Binary Matrices, & Generated Figures)
+data/

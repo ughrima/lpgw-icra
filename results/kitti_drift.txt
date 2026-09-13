@@ -1,0 +1,380 @@
+==========================================================================
+DRIFT ROBUSTNESS EXPERIMENT
+==========================================================================
+Dataset         : kitti00
+Drift fractions : ['0.0%', '0.5%', '1.0%', '2.0%', '5.0%']
+Zero-centering  : OFF (default)
+
+Reference trajectory:
+  raw 2000 pts over 199.90s (10.0 Hz raw) -> 2000 pts @ 10.01 Hz
+  391 segments x 50 pts = 5.00s each
+Query trajectory:
+  raw 2541 pts over 254.00s (10.0 Hz raw) -> 2541 pts @ 10.00 Hz
+  499 segments x 50 pts = 5.00s each
+
+Reference segments: 391   Query segments: 499
+GT positives    : 109/499  (base rate 21.8%)
+Query subset    : 150   References: 391 (full DB)
+lambda=1.0  distance_lambda=0.2
+Points per segment: 50
+Cost scale      : 97.9785 (pinned)
+Reference index : 28
+
+Verifying PGW is active before the sweep...
+================================================================
+LPGW DIAGNOSTICS
+================================================================
+  cost_scale                 : 97.9785
+  transported_mass (mean/min): 0.873333 / 0.820000
+    >> ok: mass is being discarded, PGW is active.
+  gamma_c_abs (mean)         : 2.355333e-01
+  distance(e, e)             : 0.000e+00
+  median pairwise distance   : 1.463e-01
+  additive (row+col) variance: 0.434
+  unique argmins             : 12 / 12
+================================================================
+Query path length: 2240.5 m
+
+==========================================================================
+DRIFT = 0.0% of path length  (0.00 m)
+==========================================================================
+Reference segment: index=28, points=50
+Computing LPGW embeddings for query segments...
+Computing LPGW embeddings for database segments...
+Computing LPGW discrepancy matrix...
+Reference segment: index=28, points=50
+Computing LPGW embeddings for query segments...
+Computing LPGW embeddings for database segments...
+Computing LPGW discrepancy matrix...
+
+[CACHE CHECK] identical: False
+[CACHE CHECK] spearman : 0.1179
+
+  LPGW       maxF1=0.3667 (+0.0060 vs all-pos)  AP=0.1794 (-0.0406 vs random)  R@1=0.0303
+  Hausdorff row 1/150
+  Hausdorff row 10/150
+  Hausdorff row 20/150
+  Hausdorff row 30/150
+  Hausdorff row 40/150
+  Hausdorff row 50/150
+  Hausdorff row 60/150
+  Hausdorff row 70/150
+  Hausdorff row 80/150
+  Hausdorff row 90/150
+  Hausdorff row 100/150
+  Hausdorff row 110/150
+  Hausdorff row 120/150
+  Hausdorff row 130/150
+  Hausdorff row 140/150
+  Hausdorff row 150/150
+  Hausdorff  maxF1=0.9706 (+0.6099 vs all-pos)  AP=0.9974 (+0.7774 vs random)  R@1=1.0000
+  DTW row 1/150
+  DTW row 10/150
+  DTW row 20/150
+  DTW row 30/150
+  DTW row 40/150
+  DTW row 50/150
+  DTW row 60/150
+  DTW row 70/150
+  DTW row 80/150
+  DTW row 90/150
+  DTW row 100/150
+  DTW row 110/150
+  DTW row 120/150
+  DTW row 130/150
+  DTW row 140/150
+  DTW row 150/150
+  DTW        maxF1=0.9851 (+0.6244 vs all-pos)  AP=0.9982 (+0.7782 vs random)  R@1=1.0000
+  Frechet row 1/150
+  Frechet row 10/150
+  Frechet row 20/150
+  Frechet row 30/150
+  Frechet row 40/150
+  Frechet row 50/150
+  Frechet row 60/150
+  Frechet row 70/150
+  Frechet row 80/150
+  Frechet row 90/150
+  Frechet row 100/150
+  Frechet row 110/150
+  Frechet row 120/150
+  Frechet row 130/150
+  Frechet row 140/150
+  Frechet row 150/150
+  Frechet    maxF1=0.9706 (+0.6099 vs all-pos)  AP=0.9974 (+0.7774 vs random)  R@1=0.9697
+
+==========================================================================
+DRIFT = 0.5% of path length  (11.20 m)
+==========================================================================
+Reference segment: index=28, points=50
+Computing LPGW embeddings for query segments...
+Computing LPGW embeddings for database segments...
+Computing LPGW discrepancy matrix...
+  LPGW       maxF1=0.3743 (+0.0136 vs all-pos)  AP=0.2429 (+0.0229 vs random)  R@1=0.0303
+  Hausdorff row 1/150
+  Hausdorff row 10/150
+  Hausdorff row 20/150
+  Hausdorff row 30/150
+  Hausdorff row 40/150
+  Hausdorff row 50/150
+  Hausdorff row 60/150
+  Hausdorff row 70/150
+  Hausdorff row 80/150
+  Hausdorff row 90/150
+  Hausdorff row 100/150
+  Hausdorff row 110/150
+  Hausdorff row 120/150
+  Hausdorff row 130/150
+  Hausdorff row 140/150
+  Hausdorff row 150/150
+  Hausdorff  maxF1=0.9851 (+0.6244 vs all-pos)  AP=0.9991 (+0.7791 vs random)  R@1=0.9394
+  DTW row 1/150
+  DTW row 10/150
+  DTW row 20/150
+  DTW row 30/150
+  DTW row 40/150
+  DTW row 50/150
+  DTW row 60/150
+  DTW row 70/150
+  DTW row 80/150
+  DTW row 90/150
+  DTW row 100/150
+  DTW row 110/150
+  DTW row 120/150
+  DTW row 130/150
+  DTW row 140/150
+  DTW row 150/150
+  DTW        maxF1=0.9851 (+0.6244 vs all-pos)  AP=0.9991 (+0.7791 vs random)  R@1=0.9697
+  Frechet row 1/150
+  Frechet row 10/150
+  Frechet row 20/150
+  Frechet row 30/150
+  Frechet row 40/150
+  Frechet row 50/150
+  Frechet row 60/150
+  Frechet row 70/150
+  Frechet row 80/150
+  Frechet row 90/150
+  Frechet row 100/150
+  Frechet row 110/150
+  Frechet row 120/150
+  Frechet row 130/150
+  Frechet row 140/150
+  Frechet row 150/150
+  Frechet    maxF1=0.9851 (+0.6244 vs all-pos)  AP=0.9991 (+0.7791 vs random)  R@1=0.9394
+
+==========================================================================
+DRIFT = 1.0% of path length  (22.40 m)
+==========================================================================
+Reference segment: index=28, points=50
+Computing LPGW embeddings for query segments...
+Computing LPGW embeddings for database segments...
+Computing LPGW discrepancy matrix...
+  LPGW       maxF1=0.3626 (+0.0020 vs all-pos)  AP=0.2055 (-0.0145 vs random)  R@1=0.0303
+  Hausdorff row 1/150
+  Hausdorff row 10/150
+  Hausdorff row 20/150
+  Hausdorff row 30/150
+  Hausdorff row 40/150
+  Hausdorff row 50/150
+  Hausdorff row 60/150
+  Hausdorff row 70/150
+  Hausdorff row 80/150
+  Hausdorff row 90/150
+  Hausdorff row 100/150
+  Hausdorff row 110/150
+  Hausdorff row 120/150
+  Hausdorff row 130/150
+  Hausdorff row 140/150
+  Hausdorff row 150/150
+  Hausdorff  maxF1=1.0000 (+0.6393 vs all-pos)  AP=1.0000 (+0.7800 vs random)  R@1=0.6364
+  DTW row 1/150
+  DTW row 10/150
+  DTW row 20/150
+  DTW row 30/150
+  DTW row 40/150
+  DTW row 50/150
+  DTW row 60/150
+  DTW row 70/150
+  DTW row 80/150
+  DTW row 90/150
+  DTW row 100/150
+  DTW row 110/150
+  DTW row 120/150
+  DTW row 130/150
+  DTW row 140/150
+  DTW row 150/150
+  DTW        maxF1=0.9565 (+0.5959 vs all-pos)  AP=0.9361 (+0.7161 vs random)  R@1=0.5758
+  Frechet row 1/150
+  Frechet row 10/150
+  Frechet row 20/150
+  Frechet row 30/150
+  Frechet row 40/150
+  Frechet row 50/150
+  Frechet row 60/150
+  Frechet row 70/150
+  Frechet row 80/150
+  Frechet row 90/150
+  Frechet row 100/150
+  Frechet row 110/150
+  Frechet row 120/150
+  Frechet row 130/150
+  Frechet row 140/150
+  Frechet row 150/150
+  Frechet    maxF1=1.0000 (+0.6393 vs all-pos)  AP=1.0000 (+0.7800 vs random)  R@1=0.6364
+
+==========================================================================
+DRIFT = 2.0% of path length  (44.81 m)
+==========================================================================
+Reference segment: index=28, points=50
+Computing LPGW embeddings for query segments...
+Computing LPGW embeddings for database segments...
+Computing LPGW discrepancy matrix...
+  LPGW       maxF1=0.3883 (+0.0277 vs all-pos)  AP=0.2604 (+0.0404 vs random)  R@1=0.0303
+  Hausdorff row 1/150
+  Hausdorff row 10/150
+  Hausdorff row 20/150
+  Hausdorff row 30/150
+  Hausdorff row 40/150
+  Hausdorff row 50/150
+  Hausdorff row 60/150
+  Hausdorff row 70/150
+  Hausdorff row 80/150
+  Hausdorff row 90/150
+  Hausdorff row 100/150
+  Hausdorff row 110/150
+  Hausdorff row 120/150
+  Hausdorff row 130/150
+  Hausdorff row 140/150
+  Hausdorff row 150/150
+  Hausdorff  maxF1=0.9296 (+0.5689 vs all-pos)  AP=0.9230 (+0.7030 vs random)  R@1=0.3939
+  DTW row 1/150
+  DTW row 10/150
+  DTW row 20/150
+  DTW row 30/150
+  DTW row 40/150
+  DTW row 50/150
+  DTW row 60/150
+  DTW row 70/150
+  DTW row 80/150
+  DTW row 90/150
+  DTW row 100/150
+  DTW row 110/150
+  DTW row 120/150
+  DTW row 130/150
+  DTW row 140/150
+  DTW row 150/150
+  DTW        maxF1=0.8684 (+0.5078 vs all-pos)  AP=0.8390 (+0.6190 vs random)  R@1=0.3939
+  Frechet row 1/150
+  Frechet row 10/150
+  Frechet row 20/150
+  Frechet row 30/150
+  Frechet row 40/150
+  Frechet row 50/150
+  Frechet row 60/150
+  Frechet row 70/150
+  Frechet row 80/150
+  Frechet row 90/150
+  Frechet row 100/150
+  Frechet row 110/150
+  Frechet row 120/150
+  Frechet row 130/150
+  Frechet row 140/150
+  Frechet row 150/150
+  Frechet    maxF1=0.9296 (+0.5689 vs all-pos)  AP=0.9067 (+0.6867 vs random)  R@1=0.3636
+
+==========================================================================
+DRIFT = 5.0% of path length  (112.02 m)
+==========================================================================
+Reference segment: index=28, points=50
+Computing LPGW embeddings for query segments...
+Computing LPGW embeddings for database segments...
+Computing LPGW discrepancy matrix...
+  LPGW       maxF1=0.3704 (+0.0097 vs all-pos)  AP=0.2488 (+0.0288 vs random)  R@1=0.0303
+  Hausdorff row 1/150
+  Hausdorff row 10/150
+  Hausdorff row 20/150
+  Hausdorff row 30/150
+  Hausdorff row 40/150
+  Hausdorff row 50/150
+  Hausdorff row 60/150
+  Hausdorff row 70/150
+  Hausdorff row 80/150
+  Hausdorff row 90/150
+  Hausdorff row 100/150
+  Hausdorff row 110/150
+  Hausdorff row 120/150
+  Hausdorff row 130/150
+  Hausdorff row 140/150
+  Hausdorff row 150/150
+  Hausdorff  maxF1=0.6774 (+0.3168 vs all-pos)  AP=0.6674 (+0.4474 vs random)  R@1=0.0303
+  DTW row 1/150
+  DTW row 10/150
+  DTW row 20/150
+  DTW row 30/150
+  DTW row 40/150
+  DTW row 50/150
+  DTW row 60/150
+  DTW row 70/150
+  DTW row 80/150
+  DTW row 90/150
+  DTW row 100/150
+  DTW row 110/150
+  DTW row 120/150
+  DTW row 130/150
+  DTW row 140/150
+  DTW row 150/150
+  DTW        maxF1=0.6462 (+0.2855 vs all-pos)  AP=0.6246 (+0.4046 vs random)  R@1=0.0303
+  Frechet row 1/150
+  Frechet row 10/150
+  Frechet row 20/150
+  Frechet row 30/150
+  Frechet row 40/150
+  Frechet row 50/150
+  Frechet row 60/150
+  Frechet row 70/150
+  Frechet row 80/150
+  Frechet row 90/150
+  Frechet row 100/150
+  Frechet row 110/150
+  Frechet row 120/150
+  Frechet row 130/150
+  Frechet row 140/150
+  Frechet row 150/150
+  Frechet    maxF1=0.6774 (+0.3168 vs all-pos)  AP=0.6043 (+0.3843 vs random)  R@1=0.0303
+
+==========================================================================
+SUMMARY  (max F1 by drift level)
+==========================================================================
+method               DTW   Frechet  Hausdorff      LPGW
+drift_fraction                                         
+0.000           0.985075  0.970588   0.970588  0.366667
+0.005           0.985075  0.985075   0.985075  0.374269
+0.010           0.956522  1.000000   1.000000  0.362637
+0.020           0.868421  0.929577   0.929577  0.388350
+0.050           0.646154  0.677419   0.677419  0.370370
+
+(AP by drift level)
+method               DTW   Frechet  Hausdorff      LPGW
+drift_fraction                                         
+0.000           0.998190  0.997350   0.997350  0.179351
+0.005           0.999109  0.999109   0.999109  0.242870
+0.010           0.936084  1.000000   1.000000  0.205507
+0.020           0.838970  0.906736   0.923012  0.260408
+0.050           0.624599  0.604329   0.667352  0.248766
+
+(Recall@1 by drift level)
+method               DTW   Frechet  Hausdorff      LPGW
+drift_fraction                                         
+0.000           1.000000  0.969697   1.000000  0.030303
+0.005           0.969697  0.939394   0.939394  0.030303
+0.010           0.575758  0.636364   0.636364  0.030303
+0.020           0.393939  0.363636   0.393939  0.030303
+0.050           0.030303  0.030303   0.030303  0.030303
+
+Chance levels: all-positive F1 = 0.3607, random AP = 0.2200
+Saved to: /Users/richajain/Desktop/lpgw-icra/results/drift_experiment_kitti00.csv
+
+WHAT TO LOOK FOR: LPGW roughly flat while the coordinate-based
+baselines fall. If LPGW also falls, its invariance is not
+surviving the barycentric projection -- investigate K.

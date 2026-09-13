@@ -1,0 +1,47 @@
+================================================================================================
+LAMBDA CALIBRATION
+================================================================================================
+Dataset         : kitti
+Cost mode       : squared
+Segment length  : 5.0 s   stride: 0.5 s
+Spatial tol     : 5.0 m
+LPGW points/seg : 100
+
+Reference trajectory:
+  raw 2000 pts over 199.90s (10.0 Hz raw) -> 2000 pts @ 10.01 Hz
+  391 segments x 50 pts = 5.00s each
+Query trajectory:
+  raw 2541 pts over 254.00s (10.0 Hz raw) -> 2541 pts @ 10.00 Hz
+  499 segments x 50 pts = 5.00s each
+
+Reference segments: 391   Query segments: 499
+Points per segment after downsampling: 50
+
+Calibrated cost_scale: 97.9785
+  (median pairwise distance within a segment: 9.90 m)
+Reference segment index: 28
+
+Probing 12 query segments per lambda...
+
+   lambda  mass mean   mass min     gamma_c     d(Y,Y)    med dist  geo share      uniq  status
+------------------------------------------------------------------------------------------------
+     1000    1.00000    1.00000   0.000e+00   0.00e+00   3.304e-01    100.0%   12/12    INACTIVE (lambda too high)
+      500    1.00000    1.00000   0.000e+00   0.00e+00   3.304e-01    100.0%   12/12    INACTIVE (lambda too high)
+      200    1.00000    1.00000   0.000e+00   0.00e+00   3.304e-01    100.0%   12/12    INACTIVE (lambda too high)
+      100    1.00000    1.00000   0.000e+00   0.00e+00   3.304e-01    100.0%   12/12    INACTIVE (lambda too high)
+       50    1.00000    1.00000   0.000e+00   0.00e+00   3.304e-01    100.0%   12/12    INACTIVE (lambda too high)
+       20    0.98167    0.96000   3.603e-02   0.00e+00   2.668e+00      7.2%   12/12    mass terms dominate geometry
+       10    0.93333    0.90000   1.279e-01   0.00e+00   3.003e+00      3.5%   12/12    mass terms dominate geometry
+        5    0.89833    0.86000   1.916e-01   0.00e+00   2.177e+00      5.2%   12/12    mass terms dominate geometry
+        2    0.86333    0.82000   2.529e-01   0.00e+00   1.047e+00      5.7%   12/12    mass terms dominate geometry
+        1    0.84167    0.80000   2.900e-01   0.00e+00   5.478e-01      8.4%   12/12    mass terms dominate geometry
+      0.5    0.00000    0.00000   1.000e+00   0.00e+00   0.000e+00      0.0%    1/12    over-discarding (lambda too low)
+      0.1    0.00000    0.00000   1.000e+00   0.00e+00   0.000e+00      0.0%    1/12    over-discarding (lambda too low)
+     0.01    0.00000    0.00000   1.000e+00   0.00e+00   0.000e+00      0.0%    1/12    over-discarding (lambda too low)
+------------------------------------------------------------------------------------------------
+
+NO USABLE LAMBDA FOUND.
+  Mass penalties dominate the geometric term at every
+  workable lambda. The solver needs a large lambda but
+  distance() needs a small one. These can be decoupled --
+  ask for the lambdaa / distance_lambda split.

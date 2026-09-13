@@ -1,0 +1,15 @@
+# Core dependencies (ported from legacy repo)
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+matplotlib>=3.4.0
+scikit-learn>=1.0.0
+POT>=0.9.0
+torch>=2.0.0
+numba>=0.57.0
+
+# Optional: faster DTW baseline
+fastdtw>=0.3.4
+
+# Pose extraction from ROS bags (no full ROS install required)
+rosbags>=0.9.0
